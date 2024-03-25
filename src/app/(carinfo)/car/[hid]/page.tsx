@@ -1,5 +1,5 @@
 import Image from "next/image"
-import getHospital from "@/libs/getHospital"
+import getHospital from "@/libs/getCar"
 
 export default async function hospitalDetail( {params} : { params:{hid:string} }) {
 

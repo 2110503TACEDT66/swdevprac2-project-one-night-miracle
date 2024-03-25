@@ -7,10 +7,10 @@ interface CarsItem {
     numberofseat: string,
     gearsystem: string,
     picture: string,
-   
+    id: string
   }
   
-  interface HospitalJson {
+  interface CarsJson {
     success: boolean,
     count: number,
     pagination: Object,
@@ -18,7 +18,7 @@ interface CarsItem {
   }
 
   interface rentalsItem {
-   _id:string
+   id:string
    rentalDate:Date
    user:string
    car:string

@@ -1,5 +1,5 @@
-import getHospitals from "@/libs/getHospitals";
-import HospitalCatalog from "@/components/HospitalCatalog";
+import getHospitals from "@/libs/getCars";
+import HospitalCatalog from "@/components/CarsCatalog";
 import { LinearProgress } from "@mui/material";
 import { Suspense } from "react";
 

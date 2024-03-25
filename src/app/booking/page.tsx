@@ -1,12 +1,12 @@
 "use client"
-import DateReserve from "@/components/DateReserve";
+import DateReserve from "@/components/DateRental";
 import { Select, MenuItem, TextField } from "@mui/material";
 import { Dayjs } from "dayjs";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "@/redux/store";
 import dayjs from "dayjs";
-import { addBooking } from "@/redux/features/bookSlice";
+import { addBooking } from "@/redux/features/rentalSlice";
 import { getServerSession } from "next-auth";
 import getUserProfile from "@/libs/getUserProfile";
 
