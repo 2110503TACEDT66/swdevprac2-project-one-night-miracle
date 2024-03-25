@@ -21,10 +21,13 @@ export default async function carDetail( {params} : { params:{cid:string} }) {
                 className="rounded-lg w-[30%] m-10"/>
                 <div>
                     <div className="text-2xl mt-10 font-bold font-sans">{carDetail.data.name}</div>
-                    <div className="text-lg mt-5">Address: {carDetail.data.address}</div>
-                    <div className="text-lg mt-1">Province: {carDetail.data.province}</div>
-                    <div className="text-lg mt-1">Postal Code: {carDetail.data.postalcode}</div>
-                    <div className="text-lg mt-1">Telephone Number: {carDetail.data.tel}</div>
+                    <div className="text-lg mt-5">CarId: {carDetail.data.carid}</div>
+                    <div className="text-lg mt-1">PriceRate: {carDetail.data.pricerate}</div>
+                    <div className="text-lg mt-1">Model: {carDetail.data.model}</div>
+                    <div className="text-lg mt-1">CarType: {carDetail.data.cartype}</div>
+                    <div className="text-lg mt-1">NumberofSeat: {carDetail.data.numberofseat}</div>
+                    <div className="text-lg mt-1">Gearsystem: {carDetail.data.gearsystem}</div>
+                   
                 </div>
             </div>
         </main>
