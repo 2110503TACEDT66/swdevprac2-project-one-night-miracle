@@ -14,6 +14,11 @@ export default async function TopMenu() {
             <Image src={"/images/logo.png"} className={styles.logoimg} alt="logo" width={0} height={0} sizes="100vh"/>
             <TopMenuItem title="Booking" pageRef="/booking"/>
             <div className="flex flex-row absolute left-0 h-full content-center">
+                <Link href='/signup'> 
+                    <div className="flex items-center h-full px-5 ml-5 font-semibold text-sky-500">
+                        Sign-Up
+                    </div>
+                </Link>
                 {
                     session? <Link href="/api/auth/signout">
                         <div className="flex items-center h-full px-5 ml-5 font-semibold text-sky-500">Sign-Out</div>
