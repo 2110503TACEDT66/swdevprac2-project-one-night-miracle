@@ -19,8 +19,8 @@ export default function Banner() {
             fill={true}
             priority/>
             <div className={styles.bannerText}>
-                <h1 className="text-4xl font-bold font-serif">Vaccine Service Center</h1>
-                <h3 className="text-md font-medium font-serif">It's Better to Vaccinate Than Never</h3>
+                <h1 className="text-4xl font-bold font-serif">SuperCarCare Rental Service</h1>
+                <h3 className="text-md font-medium font-serif">"Welcome to our car rental shop"</h3>
             </div>
             {
                 session? <div className="absolute top-5 right-10 font-semibold text-xl font-sans">
@@ -29,8 +29,8 @@ export default function Banner() {
             }
             <button className="bg-white text-sky-500 border border-sky-500 font-semibold py-2 px-2 m-2 rounded absolute bottom-0 right-0
             hover:bg-sky-500 hover:text-white hover:border-transparent"
-            onClick={(e) => { e.stopPropagation(); router.push("/hospital") }}>
-                Select Hospital
+            onClick={(e) => { e.stopPropagation(); router.push("/car") }}>
+                Select Car
             </button>
         </div>
     );

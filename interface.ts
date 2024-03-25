@@ -1,27 +1,27 @@
-interface HospitalItem {
+interface CarsItem {
     _id: string,
-    name: string,
-    address: string,
-    district: string,
-    province: string,
-    postalcode: string,
-    tel: string,
+    carid: string,
+    pricerate: string,
+    model: string,
+    cartype: string,
+    numberofseat: string,
+    gearsystem: string,
     picture: string,
-    __v: number,
-    id: string
+   
   }
   
   interface HospitalJson {
     success: boolean,
     count: number,
     pagination: Object,
-    data: HospitalItem[]
+    data: CarsItem[]
   }
 
-  interface BookingItem {
-    name: string,
-    surname: string,
-    id: string,
-    hospital: string,
-    bookDate: string
+  interface rentalsItem {
+   _id:string
+   rentalDate:Date
+   user:string
+   car:string
+   isPaid:Boolean
+   createdAt:Date 
   }
