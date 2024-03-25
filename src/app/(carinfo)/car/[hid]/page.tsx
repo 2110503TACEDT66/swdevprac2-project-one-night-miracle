@@ -1,9 +1,9 @@
 import Image from "next/image"
-import getHospital from "@/libs/getCar"
+import getCar from "@/libs/getCar"
 
-export default async function hospitalDetail( {params} : { params:{hid:string} }) {
+export default async function carDetail( {params} : { params:{cid:string} }) {
 
-    const hospitalDetail = await getHospital(params.hid)
+    const carDetail = await getCar(params.cid)
 
     /*
     const mockHospitalRepo = new Map()
@@ -15,16 +15,16 @@ export default async function hospitalDetail( {params} : { params:{hid:string} }
     return(
         <main>
             <div className="flex flex-row my-5 px-5">
-                <Image src={ hospitalDetail.data.picture }
-                alt="Hospital Image"
+                <Image src={ carDetail.data.picture }
+                alt="Car Image"
                 width={0} height={0} sizes="100vw"
                 className="rounded-lg w-[30%] m-10"/>
                 <div>
-                    <div className="text-2xl mt-10 font-bold font-sans">{hospitalDetail.data.name}</div>
-                    <div className="text-lg mt-5">Address: {hospitalDetail.data.address}</div>
-                    <div className="text-lg mt-1">Province: {hospitalDetail.data.province}</div>
-                    <div className="text-lg mt-1">Postal Code: {hospitalDetail.data.postalcode}</div>
-                    <div className="text-lg mt-1">Telephone Number: {hospitalDetail.data.tel}</div>
+                    <div className="text-2xl mt-10 font-bold font-sans">{carDetail.data.name}</div>
+                    <div className="text-lg mt-5">Address: {carDetail.data.address}</div>
+                    <div className="text-lg mt-1">Province: {carDetail.data.province}</div>
+                    <div className="text-lg mt-1">Postal Code: {carDetail.data.postalcode}</div>
+                    <div className="text-lg mt-1">Telephone Number: {carDetail.data.tel}</div>
                 </div>
             </div>
         </main>
