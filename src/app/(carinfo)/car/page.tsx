@@ -1,17 +1,17 @@
-import getHospitals from "@/libs/getCars";
-import HospitalCatalog from "@/components/CarsCatalog";
+import getCars from "@/libs/getCars";
+import CarsCatalog from "@/components/CarsCatalog";
 import { LinearProgress } from "@mui/material";
 import { Suspense } from "react";
 
-export default async function Hospital(){
+export default async function Car(){
 
-    const hospitals = await getHospitals()
+    const cars = await getCars()
 
     return (
     <main>
-        <h1 className="text-center p-10 text-4xl font-bold font-serif">Select Hospital</h1>
-        <Suspense fallback={<p className="mb-10 text-center text-lg"> Loading hospitals... <LinearProgress/></p>}>
-            <HospitalCatalog hospitalsJson={hospitals}/>
+        <h1 className="text-center p-10 text-4xl font-bold font-serif">Select Car</h1>
+        <Suspense fallback={<p className="mb-10 text-center text-lg"> Loading cars... <LinearProgress/></p>}>
+            <CarsCatalog carsJson={cars}/>
         </Suspense>
     </main>
     );

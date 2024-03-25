@@ -43,7 +43,7 @@ export default function Booking() {
 
     return(
         <main className="flex flex-col items-center space-y-4 w-[100%]">
-            <div className="text-4xl font-bold font-serif mt-10">Vaccine Booking</div>
+            <div className="text-4xl font-bold font-serif mt-10">Car Rental</div>
             <table className="table-auto border-seperate border-spacing-2"><tbody>
                 <tr><td>Email</td><td>{profile.data.email}</td></tr>
                 <tr><td>Tel.</td><td>{profile.data.telephoneNumber}</td></tr>

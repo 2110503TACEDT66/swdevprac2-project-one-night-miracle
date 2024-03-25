@@ -5,7 +5,7 @@ import { removeBooking } from "@/redux/features/rentalSlice"
 
 export default function RentalsList() {
 
-    const rentalsItem = useAppSelector((state) => state.bookSlice.rentalsItem)
+    const rentalsItem = useAppSelector((state) => state.rentalSlice.rentalsItem)
     const dispatch = useDispatch<AppDispatch>()
 
     return (

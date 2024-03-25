@@ -10,8 +10,8 @@ import ReduxProvider from '@/redux/ReduxProvider'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Vaccine Service Center',
-  description: "It's Better to Vaccinate Than Never",
+  title: 'SuperCarCare Rental Service',
+  description: "Welcome to our car rental shop",
 }
 
 export default async function RootLayout({
