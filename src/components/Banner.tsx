@@ -7,7 +7,7 @@ import { useSession } from "next-auth/react";
 
 export default function Banner() {
 
-    const covers = ["/images/cover.jpg", "/images/cover2.jpg", "/images/cover3.jpg", "/images/cover4.jpg"]
+    const covers = ["/images/car.jpeg", "/images/car2.jpeg", "/images/car3.jpeg", "/images/car4.jpeg"]
     const [index, changeIndex] = useState(0)
     const router = useRouter()
     const { data:session } = useSession()
@@ -15,7 +15,7 @@ export default function Banner() {
     return (
         <div className={styles.banner} onClick={() => {changeIndex(index+1)}}>
             <Image src={covers[index%4]}
-            alt="cover"
+            alt="car"
             fill={true}
             priority/>
             <div className={styles.bannerText}>
