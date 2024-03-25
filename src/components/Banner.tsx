@@ -7,7 +7,7 @@ import { useSession } from "next-auth/react";
 
 export default function Banner() {
 
-    const covers = ["/images/car.jpeg", "/images/car2.jpeg", "/images/car3.jpeg", "/images/car4.jpeg"]
+    const covers = ["/images/car1.jpeg", "/images/car2.jpeg", "/images/car3.jpeg", "/images/car4.jpeg"]
     const [index, changeIndex] = useState(0)
     const router = useRouter()
     const { data:session } = useSession()
