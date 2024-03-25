@@ -1,9 +1,9 @@
-import BookingList from "@/components/RentalList";
+import RentalsList from "@/components/RentalsList";
 
-export default function myBookingList() {
+export default function myRentalsList() {
     return (
         <main>
-            <BookingList/>
+            <RentalsList/>
         </main>
     )
 }
