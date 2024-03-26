@@ -10,8 +10,12 @@ import { getServerSession } from "next-auth";
 import getUserProfile from "@/libs/getUserProfile";
 import getCars from "@/libs/getCars";
 import createRental from "@/libs/createRental";
+import { useSession } from "next-auth/react";
 
 export default function Booking() {
+
+    const session = useSession();
+    if (!session || !session.data) return;
     
    /* const session = await getServerSession(authOptions)
     if(!session || !session.user.token) return null
@@ -47,9 +51,8 @@ export default function Booking() {
 
     const handleClick = async () => {
         try {
-            const session = await getServerSession(authOptions);
-            if (!session || !session.user.token) return;
-            createRental(cid, pickupDate, returnDate, session.user.token);
+            await createRental(cid, pickupDate, returnDate, session.data.user.token);
+            console.log("success")
         } catch (error) {
             console.error("Error fetching session:", error);
         }
