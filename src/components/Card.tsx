@@ -22,6 +22,7 @@ export default function Card({carName, imgSrc, onRating} : {carName:string, imgS
                 <Image src={imgSrc}
                 alt="About Car"
                 fill={true}
+                sizes="100"
                 className="object-cover rounded-t-lg"/>
             </div>
             <div className="w-full h-[30%] p-[10px] font-semibold">
