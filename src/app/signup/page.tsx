@@ -28,19 +28,19 @@ export default function signUpPage(){
         console.log(name, email, phoneNo, password)
         try{
         await userSignUp(name, email, phoneNo, password);
-        alert('signup succeed')
+        alert('Sign-up success')
         // await userLogIn(email, password)
         router.push('/api/auth/signin');
     }
         catch(error){
-            alert('SignUp failed')
+            alert('Sign-up failed')
             console.error('signup failed', error)
             console.log('error')
         }
     }
     
     return(
-        <div className="flex flex-col items-center mt-28 bg-white">
+        <div className="flex flex-col items-center mx-auto py-5 mt-28 bg-gray-200 w-[70%] rounded-lg">
             <div className='mb-5'>
                 <TextField variant="outlined" label='Name' value={name} onChange={(e)=>{setName(e.target.value)}}/>
             </div>
@@ -76,7 +76,7 @@ export default function signUpPage(){
             placeholder="at least 6 character"
           />
         </FormControl>
-            <Button variant="contained" onClick={handleSignUp} className='bg-blue-600 mt-10'>Sign Up</Button>
+            <Button variant="contained" onClick={handleSignUp} className='bg-white text-gray-500 border border-gray-500 hover:bg-gray-500 hover:text-white hover:border-transparent mt-10'>Sign Up</Button>
         </div>
     )
 }

@@ -9,8 +9,8 @@ export default async function Car(){
 
     return (
     <main>
-        <h1 className="text-center p-10 text-4xl font-bold font-serif">Select Car</h1>
-        <Suspense fallback={<p className="mb-10 text-center text-lg"> Loading cars... <LinearProgress/></p>}>
+        <h1 className="text-center p-10 text-4xl font-bold font-serif text-white">Select Car</h1>
+        <Suspense fallback={<p className="my-10 text-center text-xl text-white font-semibold"> Loading cars... <LinearProgress/></p>}>
             <CarsCatalog carsJson={cars}/>
         </Suspense>
     </main>

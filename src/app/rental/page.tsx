@@ -1,19 +1,21 @@
 "use client"
 import DateReserve from "@/components/DateRental";
-import { Select, MenuItem, TextField, LinearProgress } from "@mui/material";
+import { Select, MenuItem, LinearProgress } from "@mui/material";
 import { Dayjs } from "dayjs";
 import { useState, useEffect, Suspense } from "react";
-import { useDispatch } from "react-redux";
-import { AppDispatch } from "@/redux/store";
-import { authOptions } from "../api/auth/[...nextauth]/route";
-import { getServerSession } from "next-auth";
-import getUserProfile from "@/libs/getUserProfile";
 import getCars from "@/libs/getCars";
 import createRental from "@/libs/createRental";
 import { useSession } from "next-auth/react";
 import getProviders from "@/libs/getProviders";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 export default function Booking() {
+
+    const theme = createTheme({
+        palette: {
+            mode: 'dark'
+          }
+    })
 
     const session = useSession();
     if (!session || !session.data) return;
@@ -64,20 +66,23 @@ export default function Booking() {
         try {
             await createRental(cid, pickupDate, returnDate, provider, session.data.user.token);
             console.log("success")
+            alert("Successfully created rental.")
         } catch (error) {
+            alert("Failed creating rental.")
             console.error("Error fetching session:", error);
         }
     }
 
     return(
         <main className="flex flex-col items-center space-y-4 w-[100%] text-white">
+            <ThemeProvider theme={theme}>
             <div className="text-4xl font-bold font-serif mt-10">Car Rental</div>
             {/*<table className="table-auto border-seperate border-spacing-2"><tbody>
                 <tr><td>Email</td><td>{profile.data.email}</td></tr>
                 <tr><td>Tel.</td><td>{profile.data.telephoneNumber}</td></tr>
                 <tr><td>Member Since</td><td>{createdAt.toString()}</td></tr>
             </tbody></table>*/}
-            <Suspense fallback={<p className="mb-10 text-center text-lg"> Loading rental form... <LinearProgress/></p>}>
+            <Suspense fallback={<p className="my-10 text-center text-xl text-white font-semibold"> Loading rental form... <LinearProgress/></p>}>
             <h1 className="font-sans text-xl font-semibold mt-4">Car</h1>
             <Select variant="standard" name="car" id="car" className="h-[2em] w-[200px]" value={cid} onChange={(e) => {setCid(e.target.value)}}>
                 {
@@ -98,8 +103,9 @@ export default function Booking() {
             <DateReserve onChange={(value:Dayjs) => {setPickupDate(value)}}/>
             <h1 className="font-sans text-xl font-semibold mt-4">Return Date</h1>
             <DateReserve onChange={(value:Dayjs) => {setReturnDate(value)}}/>
-            <button className="block rounded-md bg-sky-600 hover:bg-indigo-600 px-3 py-2 shadow-sm text-white" name="Create Rental" onClick={handleClick}>Create Rental</button>
+            <button className="block rounded-md bg-white text-gray-500 border border-gray-500 hover:bg-gray-500 hover:text-white hover:border-transparent px-3 py-2 shadow-sm" name="Create Rental" onClick={handleClick}>Create Rental</button>
             </Suspense>
+            </ThemeProvider>
         </main>
     );
 }

@@ -20,20 +20,20 @@ export default function Banner() {
             priority/>
 
             <div className={styles.bannerText}>
-                <h1 className="text-4xl font-bold font-serif">SuperCarCare Rental Service</h1>
-                <h3 className="text-md font-medium font-serif">"Welcome to our car rental shop"</h3>
+                <h1 className="text-4xl font-bold">SuperCarCare Rental Service</h1>
+                <h3 className="text-md font-medium">The Best Place To Get Super Cars</h3>
             </div>
 
             {
-                session? <div className="absolute top-5 right-10 font-semibold text-xl font-sans">
+                session? <div className="absolute top-5 right-10 font-semibold text-xl font-sans text-white">
                     Welcome {session.user?.name}
                 </div> : null
             }
           
            <div className="flex justify-center" >
-           <button className="bg-black text-white-500 border border-grey-500 font-sport
+           <button className="bg-white text-gray-500 border border-gray-500 font-sport
             py-2 px-2 m-2 rounded absolute bottom-0 rounded
-            hover:bg-orange-400 hover:text-white hover:border-transparent"
+            hover:bg-gray-500 hover:text-white hover:border-transparent"
             onClick={(e) => { e.stopPropagation(); router.push("/car") }}>
                 Select  Your SuperCar
             </button>
