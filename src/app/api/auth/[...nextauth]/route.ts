@@ -4,6 +4,7 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import userLogIn from "@/libs/userLogIn";
 
 export const authOptions:AuthOptions = {
+
     providers: [
         CredentialsProvider({
             // The name to display on the sign in form (e.g. "Sign in with...")

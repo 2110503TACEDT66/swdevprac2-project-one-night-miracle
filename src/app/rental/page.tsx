@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "@/redux/store";
 import { authOptions } from "../api/auth/[...nextauth]/route";
-import { Session, getServerSession } from "next-auth";
+import { getServerSession } from "next-auth";
 import getUserProfile from "@/libs/getUserProfile";
 import getCars from "@/libs/getCars";
 import createRental from "@/libs/createRental";
