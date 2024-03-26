@@ -1,19 +1,11 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import rentalSlice from "./features/rentalSlice";
 import { useSelector,TypedUseSelectorHook } from "react-redux";
-import { persistReducer } from "redux-persist";
-import storage from "redux-persist/lib/storage";
-
-const persistConfig = {
-    key: "rootPersist",
-    storage
-}
-
-const rootReducer = combineReducers({rentalSlice})
-const reduxPersistedReducer = persistReducer(persistConfig, rootReducer)
 
 export const store = configureStore({
-    reducer: reduxPersistedReducer
+    reducer: {
+        rentalSlice
+    }
 })
 
 export type RootState = ReturnType<typeof store.getState>

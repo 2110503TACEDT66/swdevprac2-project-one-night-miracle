@@ -12,7 +12,7 @@ export default async function TopMenu() {
     return (
         <div className={`${styles.menucontainer} font-semibold`}>
             <Link href='/'><Image src={"/images/logo.png"} className={styles.logoimg} alt="logo" width={0} height={0} sizes="100vh"/></Link>
-            <TopMenuItem title="Booking" pageRef="/booking"/>
+            <TopMenuItem title="Rental" pageRef="/rental"/>
             <div className="flex flex-row absolute left-0 h-full content-center">
                 <Link href='/signup'> 
                     <div className="flex items-center h-full px-5 ml-5 font-semibold text-sky-500">

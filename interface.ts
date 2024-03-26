@@ -18,10 +18,11 @@ interface CarsItem {
   }
 
   interface rentalsItem {
-   id:string
-   rentalDate:Date
-   user:string
-   car:string
-   isPaid:Boolean
-   createdAt:Date 
+   id:string,
+   pickupDate:Date,
+   returnDate:Date,
+   user:string,
+   car:string,
+   isPaid:Boolean,
+   createdAt:Date
   }
