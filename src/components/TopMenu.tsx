@@ -11,7 +11,7 @@ export default async function TopMenu() {
 
     return (
         <div className={`${styles.menucontainer} font-semibold`}>
-            <Link href='/'><Image src={"/images/logo.png"} className={styles.logoimg} alt="logo" width={0} height={0} sizes="100vh"/></Link>
+            <Link href='/'><Image src={"/images/logo.jpeg"} className={styles.logoimg} alt="logo" width={0} height={0} sizes="100vh"/></Link>
             <TopMenuItem title="Rental" pageRef="/rental"/>
             <div className="flex flex-row absolute left-0 h-full content-center">
                 <Link href='/signup'> 

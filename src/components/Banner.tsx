@@ -31,9 +31,9 @@ export default function Banner() {
             }
           
            <div className="flex justify-center" >
-           <button className="bg-white text-sky-500 border border-sky-500 font-sport
+           <button className="bg-black text-white-500 border border-grey-500 font-sport
             py-2 px-2 m-2 rounded absolute bottom-0 rounded
-            hover:bg-sky-500 hover:text-white hover:border-transparent"
+            hover:bg-orange-400 hover:text-white hover:border-transparent"
             onClick={(e) => { e.stopPropagation(); router.push("/car") }}>
                 Select  Your SuperCar
             </button>

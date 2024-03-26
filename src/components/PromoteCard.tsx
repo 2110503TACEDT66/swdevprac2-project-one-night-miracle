@@ -14,18 +14,21 @@ export default function PromoteCard() {
 
     return (
         <div className="flex flex-row">
-  <div className="w-[80%] shadow-lg mx-[5%] my-10 p-2 rounded-lg bg-sky-200 flex flex-row content-center">
+
+  <div className="w-[80%] shadow-lg mx-[5%] my-10 p-2 rounded-lg bg-pink-200 flex flex-row content-center">
     <VideoPlayer vdoSrc="/vdo/car.mp4" isPlaying={playing1}/>
     <div className="m-5">
       <h1 className="font-sans font-semibold text-lg text-sky-700">Get your SuperCar today!</h1>
       <div>
         <button className="bg-white text-sky-500 border border-sky-500 font-semibold py-2 px-2 mt-2 rounded z-30 hover:bg-sky-500 hover:text-white hover:border-transparent"
           onClick={() => {setPlaying1(!playing1)}}>
-          {playing1? "Break" : "Go"}
+          {playing1? "Pause" : "View"}
         </button>
       </div>
     </div>
   </div>
+  
+
   <div className="w-[80%] shadow-lg mx-[5%] my-10 p-2 rounded-lg bg-sky-200 flex flex-row content-center">
     <VideoPlayer vdoSrc="/vdo/car2.mp4" isPlaying={playing2}/>
     <div className="m-5">
@@ -33,7 +36,7 @@ export default function PromoteCard() {
       <div>
         <button className="bg-white text-sky-500 border border-sky-500 font-semibold py-2 px-2 mt-2 rounded z-30 hover:bg-sky-500 hover:text-white hover:border-transparent"
           onClick={() => {setPlaying2(!playing2)}}>
-          {playing2? "Break" : "Go"}
+          {playing2? "Pause" : "View"}
         </button>
       </div>
     </div>
