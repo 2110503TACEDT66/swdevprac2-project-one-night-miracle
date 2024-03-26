@@ -12,8 +12,9 @@ export default function VideoPlayer({vdoSrc, isPlaying} : {vdoSrc:string, isPlay
             vdoRef.current?.pause()
         }
     }, [isPlaying])
+    
 
     return (
-        <video className="w-[40%]" src={vdoSrc} ref={vdoRef} controls loop muted/>
+        <video className="w-[40%]" src={vdoSrc} ref={vdoRef} controls loop  autoPlay/>
     );
 }
