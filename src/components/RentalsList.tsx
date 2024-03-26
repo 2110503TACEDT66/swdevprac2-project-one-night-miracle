@@ -37,6 +37,7 @@ export default function RentalsList() {
                     <table className="table-auto border-separate border-spacing-4 mt-1 text-sky-500 text-md font-sans"><tbody>
                     <tr><td className="font-bold">User ID</td><td>{rental.user}</td></tr>
                     <tr><td className="font-bold">Car</td><td>{rental.car.model}</td></tr>
+                    <tr><td className="font-bold">Provider</td><td>{rental.provider}</td></tr>
                     <tr><td className="font-bold">Pickup Date</td><td>{rental.pickupDate}</td></tr>
                     <tr><td className="font-bold">Return Date</td><td>{rental.returnDate}</td></tr>
                     <tr><td className="font-bold">Is Paid?</td><td>{rental.isPaid.toString()}</td></tr>

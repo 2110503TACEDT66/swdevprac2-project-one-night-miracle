@@ -1,8 +1,8 @@
 "use client"
 import DateReserve from "@/components/DateRental";
-import { Select, MenuItem, TextField } from "@mui/material";
+import { Select, MenuItem, TextField, LinearProgress } from "@mui/material";
 import { Dayjs } from "dayjs";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "@/redux/store";
 import { authOptions } from "../api/auth/[...nextauth]/route";
@@ -11,6 +11,7 @@ import getUserProfile from "@/libs/getUserProfile";
 import getCars from "@/libs/getCars";
 import createRental from "@/libs/createRental";
 import { useSession } from "next-auth/react";
+import getProviders from "@/libs/getProviders";
 
 export default function Booking() {
 
@@ -37,9 +38,11 @@ export default function Booking() {
     }*/
 
     const [cars, setCars] = useState([])
+    const [providers, setProviders] = useState([])
     const [pickupDate, setPickupDate] = useState<Dayjs|null>(null)
     const [returnDate, setReturnDate] = useState<Dayjs|null>(null)
     const [cid, setCid] = useState<string>("")
+    const [provider, setProvider] = useState<string>("")
 
     useEffect(() => {
         async function fetchCars() {
@@ -49,9 +52,17 @@ export default function Booking() {
         fetchCars()
     }, [])
 
+    useEffect(() => {
+        async function fetchProviders() {
+                const providersData = await getProviders();
+                setProviders(providersData.data);
+        }
+        fetchProviders()
+    }, [])
+
     const handleClick = async () => {
         try {
-            await createRental(cid, pickupDate, returnDate, session.data.user.token);
+            await createRental(cid, pickupDate, returnDate, provider, session.data.user.token);
             console.log("success")
         } catch (error) {
             console.error("Error fetching session:", error);
@@ -59,13 +70,15 @@ export default function Booking() {
     }
 
     return(
-        <main className="flex flex-col items-center space-y-4 w-[100%]">
+        <main className="flex flex-col items-center space-y-4 w-[100%] text-white">
             <div className="text-4xl font-bold font-serif mt-10">Car Rental</div>
             {/*<table className="table-auto border-seperate border-spacing-2"><tbody>
                 <tr><td>Email</td><td>{profile.data.email}</td></tr>
                 <tr><td>Tel.</td><td>{profile.data.telephoneNumber}</td></tr>
                 <tr><td>Member Since</td><td>{createdAt.toString()}</td></tr>
             </tbody></table>*/}
+            <Suspense fallback={<p className="mb-10 text-center text-lg"> Loading rental form... <LinearProgress/></p>}>
+            <h1 className="font-sans text-xl font-semibold mt-4">Car</h1>
             <Select variant="standard" name="car" id="car" className="h-[2em] w-[200px]" value={cid} onChange={(e) => {setCid(e.target.value)}}>
                 {
                     cars.map((carItem:CarsItem) => (
@@ -73,9 +86,20 @@ export default function Booking() {
                     ))
                 }
             </Select>
+            <h1 className="font-sans text-xl font-semibold mt-4">Provider</h1>
+            <Select variant="standard" name="provider" id="provider" className="h-[2em] w-[200px]" value={provider} onChange={(e) => {setProvider(e.target.value)}}>
+                {
+                    providers.map((provider:ProvidersItem) => (
+                        <MenuItem key={provider.name} value={provider.name}>{provider.name}</MenuItem>
+                    ))
+                }
+            </Select>
+            <h1 className="font-sans text-xl font-semibold mt-4">Pickup Date</h1>
             <DateReserve onChange={(value:Dayjs) => {setPickupDate(value)}}/>
+            <h1 className="font-sans text-xl font-semibold mt-4">Return Date</h1>
             <DateReserve onChange={(value:Dayjs) => {setReturnDate(value)}}/>
             <button className="block rounded-md bg-sky-600 hover:bg-indigo-600 px-3 py-2 shadow-sm text-white" name="Create Rental" onClick={handleClick}>Create Rental</button>
+            </Suspense>
         </main>
     );
 }

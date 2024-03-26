@@ -17,6 +17,18 @@ interface CarsItem {
     data: CarsItem[]
   }
 
+  interface ProvidersItem {
+    _id: string,
+    name: string,
+    address: string,
+    telephoneNumber: string
+  }
+  
+  interface ProvidersJson {
+    success: boolean,
+    data: ProvidersItem[]
+  }
+
   interface rentalsItem {
    id:string,
    pickupDate:Date,

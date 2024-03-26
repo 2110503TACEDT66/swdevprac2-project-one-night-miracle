@@ -1,6 +1,6 @@
 import { Dayjs } from "dayjs"
 
-export default async function createRental(cid:string, pickupDate:(Dayjs|null), returnDate:(Dayjs|null), token:string) {
+export default async function createRental(cid:string, pickupDate:(Dayjs|null), returnDate:(Dayjs|null), provider:string, token:string) {
     const response = await fetch(`https://backend-supercarcare.vercel.app/api/v1/cars/${cid}/rental`, {
         method: "POST",
         headers: {
@@ -10,6 +10,7 @@ export default async function createRental(cid:string, pickupDate:(Dayjs|null), 
         body: JSON.stringify({
             pickupDate: pickupDate,
             returnDate: returnDate,
+            provider: provider
         })
     })
 

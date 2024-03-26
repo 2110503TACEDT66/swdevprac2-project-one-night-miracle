@@ -10,9 +10,10 @@ export default async function TopMenu() {
     const session = await getServerSession(authOptions)
 
     return (
-        <div className={`${styles.menucontainer} font-semibold`}>
+        <div className={`${styles.menucontainer} font-semibold text-white text-sm`}>
             <Link href='/'><Image src={"/images/logo.avif"} className={styles.logoimg} alt="logo" width={0} height={0} sizes="200vh"/></Link>
             <TopMenuItem title="Rental" pageRef="/rental"/>
+            <TopMenuItem title="Providers" pageRef="/providers"/>
             <div className="flex flex-row absolute left-0 h-full content-center">
                 {
                     session? "" : <Link href='/signup'> 
@@ -23,7 +24,7 @@ export default async function TopMenu() {
                 }
                 {
                     session? <Link href="/api/auth/signout">
-                        <div className="flex items-center h-full px-5 ml-5 font-semibold text-sky-500">Sign-Out</div>
+                        <div className="flex items-center h-full px-5 ml-5 font-semibold text-white">Sign-Out</div>
                     </Link>
                     : <Link href="/api/auth/signin">
                         <div className="flex items-center h-full px-5 ml-5 font-semibold text-sky-500">Sign-In</div>
