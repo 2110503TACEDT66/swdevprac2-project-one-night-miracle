@@ -30,7 +30,7 @@ export default function signUpPage(){
         await userSignUp(name, email, phoneNo, password);
         alert('signup succeed')
         // await userLogIn(email, password)
-        router.push('/');
+        router.push('/api/auth/signin');
     }
         catch(error){
             alert('SignUp failed')
@@ -48,7 +48,7 @@ export default function signUpPage(){
                 <TextField variant="outlined" label='Email' value={email} onChange={(e)=>{setEmail(e.target.value)}}/>
             </div>
             <div className='mb-5'>
-                <TextField variant="outlined" label='Phone No' value={phoneNo} onChange={(e)=>{setphone(e.target.value)}}/>
+                <TextField variant="outlined" label='Phone No' value={phoneNo} onChange={(e)=>{setphone(e.target.value)}} placeholder="Format: 000-000-0000"/>
             </div>
             {/* <div className='mb-5'>
                 <TextField variant="outlined" label='Password' value={password} onChange={(e)=>{setPassword(e.target.value)}}/>
@@ -73,6 +73,7 @@ export default function signUpPage(){
               </InputAdornment>
             }
             label="Password"
+            placeholder="at least 6 character"
           />
         </FormControl>
             <Button variant="contained" onClick={handleSignUp} className='bg-blue-600 mt-10'>Sign Up</Button>
