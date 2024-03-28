@@ -1,4 +1,5 @@
 import ProvidersCard from "./ProvidersCard";
+import { ProvidersItem,ProvidersJson } from "../../interface";
 
 export default async function ProvidersCatalog({providersJson} : {providersJson:Promise<ProvidersJson>}) {
 
