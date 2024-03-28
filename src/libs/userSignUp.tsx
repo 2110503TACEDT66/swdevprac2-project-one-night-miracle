@@ -1,5 +1,5 @@
 export default async function userSignUp(name: string, email:string, phoneNo:string, password:string) {
-    const response = await fetch("https://backend-supercarcare.vercel.app/api/v1/auth/register", {
+    const response = await fetch(`${process.env.BACKEND_URL}/api/v1/auth/register`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

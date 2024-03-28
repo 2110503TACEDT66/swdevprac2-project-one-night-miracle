@@ -1,7 +1,7 @@
 import Card from "./Card";
 import Link from "next/link";
-
-export default async function CarCatalog({carsJson} : {carsJson:Promise<CarsJson>}) {
+import { CarsItem , CarsJson } from "../../interface";
+export default async function CarCatalog({carsJson} : {carsJson:CarsJson}) {
 
     const carsJsonReady = await carsJson
 

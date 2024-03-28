@@ -1,5 +1,5 @@
 export default async function removeRental(token:string, rid:string) {
-    const response = await fetch(`https://backend-supercarcare.vercel.app/api/v1/rental/${rid}`, {
+    const response = await fetch(`${process.env.BACKEND_URL}/api/v1/rental/${rid}`, {
         method: "DELETE",
         headers: {
             authorization: `Bearer ${token}`

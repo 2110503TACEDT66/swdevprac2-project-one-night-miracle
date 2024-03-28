@@ -1,4 +1,4 @@
-interface CarsItem {
+export interface CarsItem {
     _id: string,
     carid: string,
     pricerate: string,
@@ -10,26 +10,26 @@ interface CarsItem {
     id: string
   }
   
-  interface CarsJson {
+  export interface CarsJson {
     success: boolean,
     count: number,
     pagination: Object,
     data: CarsItem[]
   }
 
-  interface ProvidersItem {
+  export interface ProvidersItem {
     _id: string,
     name: string,
     address: string,
     telephoneNumber: string
   }
   
-  interface ProvidersJson {
+  export interface ProvidersJson {
     success: boolean,
     data: ProvidersItem[]
   }
 
-  interface rentalsItem {
+  export interface rentalsItem {
    id:string,
    pickupDate:Date,
    returnDate:Date,

@@ -1,5 +1,5 @@
 export default async function getRentals(token:string) {
-    const response = await fetch("https://backend-supercarcare.vercel.app/api/v1/rental", {
+    const response = await fetch(`${process.env.BACKEND_URL}/api/v1/cars/rental`, {
         method: "GET",
         headers: {
             authorization: `Bearer ${token}`
