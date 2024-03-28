@@ -11,6 +11,7 @@ import { Dayjs } from "dayjs"
 import DateReserve from "@/components/DateRental";
 import editRental from "@/libs/editRental"
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { CarsItem,ProvidersItem } from "../../interface"
 
 export default function RentalsList() {
 
