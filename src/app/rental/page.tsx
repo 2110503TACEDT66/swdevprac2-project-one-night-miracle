@@ -8,7 +8,7 @@ import createRental from "@/libs/createRental";
 import { useSession } from "next-auth/react";
 import getProviders from "@/libs/getProviders";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-
+import { CarsItem } from "../../../interface";
 export default function Booking() {
 
     const theme = createTheme({

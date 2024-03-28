@@ -1,3 +1,4 @@
+
 import Card from "./Card";
 import Link from "next/link";
 import { CarsItem , CarsJson } from "../../interface";
