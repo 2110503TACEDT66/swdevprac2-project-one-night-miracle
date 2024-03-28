@@ -22,6 +22,7 @@ export default function RentalsList() {
     })
 
     const [rentals, setRentals] = useState([])
+    console.log(rentals)
     const [edit, setEdit] = useState(false)
     const [id, setId] = useState("")
 
@@ -88,7 +89,7 @@ export default function RentalsList() {
             alert("Failed editing rental.")
         }
     }
-
+    console.log(rentals)
     return (
         <>
         {
