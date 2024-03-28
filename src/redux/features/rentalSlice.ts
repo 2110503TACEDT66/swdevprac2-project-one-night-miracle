@@ -1,4 +1,5 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+import { rentalsItem } from "../../../interface";
 
 type RentalState = {
     rentalsItem: rentalsItem[]
